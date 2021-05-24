@@ -4,7 +4,7 @@ import { View } from "../../../../components/Themed";
 import { setTimer, stopTimer } from "../../../../hooks/useTimer";
 import { MainButton } from "./MainButton";
 import { TimerText } from "./TimerText";
-import  Sounds  from 'app/utils/Sounds'
+import Sounds from 'app/utils/Sounds'
 
 export const Timer: React.FC = () => {
   const [time, setTime] = useState<number>(5);

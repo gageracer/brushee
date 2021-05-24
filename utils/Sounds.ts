@@ -46,4 +46,4 @@ async function playNextSound() {
 // }, [sound]);
 
 
-export default { playFirstSound, playNextSound }
+export default { playFirstSound, playNextSound };
