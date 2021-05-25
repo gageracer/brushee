@@ -36,14 +36,4 @@ async function playNextSound() {
   }
 }
 
-
-// useEffect(() => {
-//   return sound
-//     ? () => {
-//         sound.unloadAsync();
-//       }
-//     : undefined;
-// }, [sound]);
-
-
 export default { playFirstSound, playNextSound };
