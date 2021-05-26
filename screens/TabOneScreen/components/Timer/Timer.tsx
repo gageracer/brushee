@@ -12,7 +12,7 @@ export const Timer: React.FC = () => {
 
   const handleTimer = () => {
     if (isTimeRunning) return;
-    Sounds.playFirstSound()
+    Sounds.playSoundFromStart(Sounds.Name.FIRST)
     setIsTimeRunning(true);
     let currentTime = time;
     setTimer(() => {
@@ -23,7 +23,7 @@ export const Timer: React.FC = () => {
 
   useEffect(() => {
     if (time === -1) {
-      Sounds.playNextSound()
+      Sounds.playSoundFromStart(Sounds.Name.NEXT)
       stopTimer();
       setTime(5);
       setIsTimeRunning(false);
