@@ -4,14 +4,15 @@ import { View } from "../../../../components/Themed";
 import { setTimer, stopTimer } from "../../../../hooks/useTimer";
 import { MainButton } from "./MainButton";
 import { TimerText } from "./TimerText";
+import Sounds from 'app/utils/Sounds'
 
 export const Timer: React.FC = () => {
-  const [time, setTime] = useState<number>(10);
+  const [time, setTime] = useState<number>(5);
   const [isTimeRunning, setIsTimeRunning] = useState<boolean>(false);
 
   const handleTimer = () => {
     if (isTimeRunning) return;
-
+    Sounds.playSoundFromStart(Sounds.Name.FIRST)
     setIsTimeRunning(true);
     let currentTime = time;
     setTimer(() => {
@@ -22,9 +23,11 @@ export const Timer: React.FC = () => {
 
   useEffect(() => {
     if (time === -1) {
+      Sounds.playSoundFromStart(Sounds.Name.NEXT)
       stopTimer();
-      setTime(10);
+      setTime(5);
       setIsTimeRunning(false);
+      
     }
   }, [time]);
 
